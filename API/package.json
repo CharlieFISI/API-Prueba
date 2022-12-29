@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Charlie",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.12.1",
+    "npm": ">=8.19.2"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "nodemon": "^2.0.20"
+  }
+}
