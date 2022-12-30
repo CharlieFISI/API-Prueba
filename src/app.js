@@ -9,6 +9,7 @@ module.exports = app
 
 require("./rutas/productos.js")
 require("./rutas/planes.js")
+require("./rutas/imc.js")
 
 app.get('/', (req, res) => {
     res.send("¡Bienvenido a ChadGymAPI!")
