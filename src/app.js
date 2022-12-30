@@ -8,6 +8,7 @@ app.use(bodyParser.json())
 module.exports = app
 
 require("./rutas/productos")
+require("./rutas/planes")
 
 app.get('/', (req, res) => {
     res.send("¡Bienvenido a ChadGymAPI!")
