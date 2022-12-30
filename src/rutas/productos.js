@@ -31,7 +31,7 @@ app.get('/productos/:id', (req, res) => {
     })
 })
 
-app.post('/agregar', (req, res) =>{
+/*app.post('/agregar', (req, res) =>{
     const sql = "INSERT INTO producto SET ?"
     const productoObj = {
         NombreProducto: req.body.NombreProducto,
@@ -71,4 +71,4 @@ app.delete('/eliminar/:id', (req, res) => {
         }
         res.send("Producto eliminado")
     })
-})
+})*/
