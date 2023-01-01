@@ -32,10 +32,10 @@ app.get('/api/tienda_virtual/v1/compras/:id', (req, res) => {
 })
 app.post('/api/tienda_virtual/v1/comprar', (req, res) =>{
     const sql = "INSERT INTO compra SET ?"
-    const hoy = new Date()
+    //const hoy = new Date()
     const productoObj = {
         idcliente: req.body.idcliente,
-        Fecha: hoy,
+        Fecha: req.body.Fecha,
         Tipo: req.body.Tipo
     }
 
