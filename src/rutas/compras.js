@@ -50,9 +50,40 @@ app.post('/api/tienda_virtual/v1/comprar', (req, res) =>{
 app.post('/api/tienda_virtual/v1/comprar/planes', (req, res) => {
     const sql = "INSERT INTO planesxcompra SET ?"
     const productoObj = {
-        idPlan: req.body.idPlan,
         idCompra: req.body.idCompra,
+        idPlan: req.body.idPlan,
         duracion: req.body.duracion
+    }
+
+    conexion.query(sql, productoObj, e => {
+        if(e){
+            throw e
+        }
+        res.send("Compra de plan añadida")
+    })
+})
+app.post('/api/tienda_virtual/v1/comprar/sesiones', (req, res) => {
+    const sql = "INSERT INTO planesxcompra SET ?"
+    const productoObj = {
+        idCompra: req.body.idCompra,
+        idCompraXSesiones: req.body.idCompraXSesiones,
+        CantidadSesiones: req.body.CantidadSesiones
+    }
+
+    conexion.query(sql, productoObj, e => {
+        if(e){
+            throw e
+        }
+        res.send("Compra de plan añadida")
+    })
+})
+app.post('/api/tienda_virtual/v1/comprar/productos', (req, res) => {
+    const sql = "INSERT INTO planesxcompra SET ?"
+    const productoObj = {
+        idCompra: req.body.idCompra,
+        idproductos: req.body.idproductos,
+        PrecioParcial: req.body.PrecioParcial,
+        Cantidad: req.body.Cantidad
     }
 
     conexion.query(sql, productoObj, e => {
