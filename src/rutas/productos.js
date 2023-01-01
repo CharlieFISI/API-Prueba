@@ -1,7 +1,7 @@
 const app = require("../app.js")
 const conexion = require("../conexion.js")
 //Productos
-app.get('/productos', (req, res) => {
+app.get('/api/tienda_virtual/v1/productos', (req, res) => {
     const sql = "SELECT * FROM producto"
 
     conexion.query(sql, (e, results)=>{
@@ -15,7 +15,7 @@ app.get('/productos', (req, res) => {
         }
     })
 })
-app.get('/productos/:id', (req, res) => {
+app.get('/api/tienda_virtual/v1/productos/:id', (req, res) => {
     const {id } = req.params
     const sql = `SELECT * FROM producto WHERE idProducto = ${id}`
     

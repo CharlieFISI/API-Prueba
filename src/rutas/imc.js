@@ -1,7 +1,7 @@
 const app = require("../app.js")
 const conexion = require("../conexion.js")
 //IMC
-app.get('/imc', (req, res) => {
+app.get('/api/seguimientos_objetivos/v1/imc', (req, res) => {
     const sql = "SELECT * FROM imc"
 
     conexion.query(sql, (e, results)=>{
@@ -15,7 +15,7 @@ app.get('/imc', (req, res) => {
         }
     })
 })
-app.get('/imc/cliente/:id', (req, res) => {
+app.get('/api/seguimientos_objetivos/v1/imc/cliente/:id', (req, res) => {
     const {id } = req.params
     const sql = `SELECT * FROM imc WHERE idcliente = ${id}`
     
@@ -30,7 +30,7 @@ app.get('/imc/cliente/:id', (req, res) => {
         }
     })
 })
-app.post('imc/cliente/agregar', (req, res) =>{
+app.post('/api/seguimientos_objetivos/v1/imc/cliente/agregar', (req, res) =>{
     const sql = "INSERT INTO producto SET ?"
     const productoObj = {
         Peso: req.body.Peso,
