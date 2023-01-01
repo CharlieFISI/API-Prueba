@@ -30,7 +30,7 @@ app.get('/api/tienda_virtual/v1/compras/:id', (req, res) => {
         }
     })
 })
-app.put('/api/tienda_virtual/v1/comprar', (req, res) => {
+app.post('/api/tienda_virtual/v1/comprar', (req, res) => {
     const sql = "INSERT INTO compra SET ?"
     const hoy = new Date()
     const productoObj = {
@@ -46,7 +46,7 @@ app.put('/api/tienda_virtual/v1/comprar', (req, res) => {
         res.send("Compra añadida")
     })
 })
-app.put('/api/tienda_virtual/v1/comprar/planes', (req, res) => {
+app.post('/api/tienda_virtual/v1/comprar/planes', (req, res) => {
     const sql = "INSERT INTO planesxcompra SET ?"
     const productoObj = {
         idPlan: req.body.idPlan,
