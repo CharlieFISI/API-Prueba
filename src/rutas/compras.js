@@ -63,10 +63,10 @@ app.post('/api/tienda_virtual/v1/comprar/planes', (req, res) => {
     })
 })
 app.post('/api/tienda_virtual/v1/comprar/sesiones', (req, res) => {
-    const sql = "INSERT INTO planesxcompra SET ?"
+    const sql = "INSERT INTO compraxsesiones SET ?"
     const productoObj = {
         idCompra: req.body.idCompra,
-        idCompraXSesiones: req.body.idCompraXSesiones,
+        idSesionesPersonalizadas: req.body.idSesionesPersonalizadas,
         CantidadSesiones: req.body.CantidadSesiones
     }
 
@@ -74,11 +74,11 @@ app.post('/api/tienda_virtual/v1/comprar/sesiones', (req, res) => {
         if(e){
             throw e
         }
-        res.send("Compra de plan añadida")
+        res.send("Compra de sesion añadida")
     })
 })
 app.post('/api/tienda_virtual/v1/comprar/productos', (req, res) => {
-    const sql = "INSERT INTO planesxcompra SET ?"
+    const sql = "INSERT INTO compraxproductos SET ?"
     const productoObj = {
         idCompra: req.body.idCompra,
         idproductos: req.body.idproductos,
@@ -90,6 +90,6 @@ app.post('/api/tienda_virtual/v1/comprar/productos', (req, res) => {
         if(e){
             throw e
         }
-        res.send("Compra de plan añadida")
+        res.send("Compra de productos añadida")
     })
 })
