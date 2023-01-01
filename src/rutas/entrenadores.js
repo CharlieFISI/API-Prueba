@@ -1,7 +1,7 @@
 const app = require("../app.js")
 const conexion = require("../conexion.js")
 //Entrenadores
-app.get('/api/visualizacion_plan/v1/planes', (req, res) => {
+app.get('/api/visualizacion_plan/v1/entrenador', (req, res) => {
     const sql = "SELECT * FROM entrenadores"
 
     conexion.query(sql, (e, results)=>{
@@ -15,7 +15,7 @@ app.get('/api/visualizacion_plan/v1/planes', (req, res) => {
         }
     })
 })
-app.get('/api/visualizacion_plan/v1/planes/:id', (req, res) => {
+app.get('/api/visualizacion_plan/v1/entrenador/:id', (req, res) => {
     const {id } = req.params
     const sql = `SELECT * FROM plan WHERE idPlan = ${id}`
     
