@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'chadgymapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C9C0067B5A24F92A5C5966B40C80886 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_914A3F3B96B744BB8EAD95E4A1C494C5 }}
           package: .
