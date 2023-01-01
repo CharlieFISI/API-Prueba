@@ -10,6 +10,7 @@ module.exports = app
 require("./rutas/compras.js")
 require("./rutas/entrenadores.js")
 require("./rutas/imc.js")
+require("./rutas/personal.js")
 require("./rutas/planes.js")
 require("./rutas/productos.js")
 require("./rutas/sesiones.js")
