@@ -26,9 +26,9 @@ app.get('/api/inicio_sesion/v1/usuario', (req, res) =>{
         if(e){
             throw e
         }if(results.length > 0){
-            res.send(1)
+            res.send("1")
         }else{
-            res.send(0)
+            res.send("0")
         }
     })
 })
