@@ -32,9 +32,11 @@ app.get('/api/seguimientos_objetivos/v1/imc/cliente/:id', (req, res) => {
 })
 app.post('/api/seguimientos_objetivos/v1/imc/cliente/agregar', (req, res) =>{
     const sql = "INSERT INTO producto SET ?"
+    const hoy = new Date()
     const productoObj = {
         Peso: req.body.Peso,
         Altura: req.body.Altura,
+        Fecha: hoy,
         idcliente: req.body.idcliente       
     }
 
