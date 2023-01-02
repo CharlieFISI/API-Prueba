@@ -15,6 +15,7 @@ require("./rutas/personal.js")
 require("./rutas/planes.js")
 require("./rutas/productos.js")
 require("./rutas/sesiones.js")
+require("./rutas/tarjeta.js")
 
 app.get('/', (req, res) => {
     res.send("¡Bienvenido a ChadGymAPI!")
