@@ -24,7 +24,7 @@ app.get('/api/visualizacion_plan/v1/entrenador/:id', (req, res) => {
             throw e
         }
         if(results.length > 0){
-            res.json(results)
+            res.json(results[0])
         }else{
             res.send("Sin resultados")
         }

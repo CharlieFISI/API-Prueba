@@ -7,6 +7,7 @@ app.use(bodyParser.json())
 
 module.exports = app
 
+require("./rutas/clientes.js")
 require("./rutas/compras.js")
 require("./rutas/entrenadores.js")
 require("./rutas/imc.js")
