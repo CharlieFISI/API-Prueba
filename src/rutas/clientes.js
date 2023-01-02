@@ -33,7 +33,7 @@ app.get('/api/inicio_sesion/v1/usuario', (req, res) =>{
     })
 })
 app.get('/api/recuperar/v1/usuario/email', (req, res) =>{
-    const {Correo} = req.body
+    const {Correo} = req.query
     const sql = `SELECT DNI FROM clientes WHERE Correo = "${Correo}"`
 
     conexion.query(sql, (e, results) => {
@@ -48,7 +48,7 @@ app.get('/api/recuperar/v1/usuario/email', (req, res) =>{
 })
 app.put('/api/recuperar/v1/usuario/:id', (req, res) => {
     const { id } = req.params
-    const {Contrasenia} = req.body
+    const {Contrasenia} = req.query
     const sql = `UPDATE clientes SET Contrasenia = "${Contrasenia}" WHERE DNI = ${id}`
 
     conexion.query(sql, e => {
@@ -59,7 +59,7 @@ app.put('/api/recuperar/v1/usuario/:id', (req, res) => {
     })
 })
 app.get('/api/visualizacion_plan/v1/usuario', (req, res) => {
-    const {Correo} = req.body
+    const {Correo} = req.query
     const sql = `SELECT clientes.DNI, clientes.Nombre, planesxcliente.fechainicio, planesxcliente.fechafin, planesxcliente.estado, plan.NombrePlan FROM clientes RIGHT JOIN planesxcliente ON planesxcliente.idcliente = clientes.DNI LEFT JOIN planesxcompra ON planesxcompra.idplanesxcompra = planesxcliente.idplanescompra LEFT JOIN plan ON planesxcompra.idPlan = plan.idPlan WHERE clientes.Correo = "${Correo}"`
 
     conexion.query(sql, (e, results) => {
