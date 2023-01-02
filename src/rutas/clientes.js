@@ -19,16 +19,16 @@ app.post('/api/registro/v1/usuario', (req, res) =>{
     })
 })
 app.get('/api/inicio_sesion/v1/usuario', (req, res) =>{
-    const {Correo, Contrasenia} = req.body
+    const {Correo, Contrasenia} = req.query
     const sql = `SELECT Correo, Contrasenia FROM clientes WHERE Correo = "${Correo}" AND Contrasenia = "${Contrasenia}"`
 
     conexion.query(sql, (e, results) => {
         if(e){
             throw e
         }if(results.length > 0){
-            res.send("Usuario confirmado")
+            res.send(1)
         }else{
-            res.send("Usuario no encontrado")
+            res.send(0)
         }
     })
 })
