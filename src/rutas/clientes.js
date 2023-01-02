@@ -73,9 +73,9 @@ app.get('/api/visualizacion_plan/v1/usuario', (req, res) => {
         }
     })
 })
-app.put('/api/visualizacion_plan/v1/usuario/meta/:id/:Meta', (req, res) => {
+app.put('/api/visualizacion_plan/v1/usuario/meta/:id', (req, res) => {
     const { id } = req.params
-    const {Meta} = req.params
+    const {Meta} = req.query
     const sql = `UPDATE clientes SET Meta = "${Meta}" WHERE DNI = ${id}`
 
     conexion.query(sql, e => {
